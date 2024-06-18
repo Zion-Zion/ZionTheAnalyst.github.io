@@ -4687,3 +4687,19 @@ input, select, textarea {
 		}
 
 	}
+
+	.skills-section {
+		text-align: match-parent;
+	}
+
+	.skills-section ul {
+		list-style-type: none; /* Remove default bullets */
+		padding-left: 0; /* Remove default left padding */
+	}
+
+	#intro img {
+		max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+		height: auto; /* Maintain aspect ratio */
+		display: block; /* Ensure image behaves as a block element */
+		margin: 0 auto 20px; /* Center the image horizontally with some bottom margin */
+	}
