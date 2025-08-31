@@ -77,7 +77,8 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
+							<li class="active"><a href="#projects" onclick="showSection('projects')">Projects</a></li>
+							<li><a href="#testimonials" onclick="showSection('testimonials')">Testimonials</a></li>
 						</ul>
 						<ul class="icons">
 								<li><a href="https://twitter.com/xionne_" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
@@ -89,12 +90,15 @@
 						</ul>
                       
 					</nav>
+					
                 
 
 				<!-- Main -->
 					<div id="main">
 
 						<!-- Featured Post -->
+						  <!-- Projects Section -->
+  						<section id="projects" class="tab-section">
 							<article class="post featured">
 								<header class="major">
 									<h2>Bioinformatics Jobs 2024: Trends, Top Locations and In-Demand Skills</h2>
@@ -223,6 +227,28 @@
 								</article>
                                 
 							</section>
+						</section>
+
+						<!-- Testimonials Section (hidden by default) -->
+						<section id="testimonials" class="tab-section" style="display:none;">
+							<article class="post featured">
+							<header class="major">
+								<h2>What Clients & Students Say</h2>
+								<p>Here are some words from people I’ve worked with.</p>
+							</header>
+							<a href="#" class="image main"><img src="images/Gemini_Generated_Image_a3r8e1a3r8e1a3r8.png" alt="Client testimonial screenshot" /></a>
+							<blockquote>"Working with Zion was an absolute game-changer for my project..."</blockquote>
+							</article>
+
+							<section class="posts">
+							<article>
+								<header>
+								<h2>Student Feedback</h2>
+								</header>
+								<p>"His mentorship in data science helped me land my first analyst role..."</p>
+							</article>
+							</section>
+						</section>
 					</div>
 
 				<!-- Footer -->
@@ -294,6 +320,38 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			function showSection(sectionId) {
+			// hide all sections
+			document.querySelectorAll('.tab-section').forEach(sec => sec.style.display = 'none');
+			
+			// show selected
+			document.getElementById(sectionId).style.display = 'block';
+			
+			// update nav active state
+			document.querySelectorAll('#nav .links li').forEach(li => li.classList.remove('active'));
+			document.querySelector(`#nav .links a[href="#${sectionId}"]`).parentElement.classList.add('active');
+			}
+
+			// Auto-open based on hash in URL
+			window.addEventListener('load', () => {
+			const hash = window.location.hash.substring(1); // removes the #
+			if (hash && document.getElementById(hash)) {
+				showSection(hash);
+			} else {
+				showSection('projects'); // default
+			}
+			});
+
+			// Handle when user manually changes the hash (e.g. clicking a link)
+			window.addEventListener('hashchange', () => {
+			const hash = window.location.hash.substring(1);
+			if (hash && document.getElementById(hash)) {
+				showSection(hash);
+			}
+			});
+			</script>
+
 
 	</body>
 </html>
