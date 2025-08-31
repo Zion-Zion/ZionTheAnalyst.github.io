@@ -145,6 +145,15 @@ input, select, textarea {
 }
 
 
+.no-fade {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+
+
 /* Basic */
 
 	@-ms-viewport {
