@@ -72,6 +72,69 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Skills Section */
+.skills-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+ /* background: #f9fafb;  light background */
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.skills-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.skill-item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.skill-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #eeeeee;
+  margin-right: 0.5rem;
+  white-space: nowrap; /* keeps header on one line */
+}
+
+.skill-item p {
+  margin: 0;
+  color: #eeeeee;
+  font-size: 1rem;
+}
+
+.skill-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  gap: 8px; /* space between h3 and list */
+}
+
+.skill-inline h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.skill-inline h3 i {
+  margin-right: 6px;
+  color: #eeeeee; /* icon color tweak */
+}
+
+.skill-inline p {
+  margin: 0;
+  font-size: 1rem;
+  color: #eeeeee;
+}
+
+
 /* Basic */
 
 	@-ms-viewport {
