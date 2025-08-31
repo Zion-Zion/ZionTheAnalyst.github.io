@@ -110,17 +110,27 @@ input, select, textarea {
 
 .skill-inline {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex-wrap: wrap; /* allows wrapping on smaller screens */
-  gap: 8px; /* space between h3 and list */
+  gap: 6px; /* space between h3 and list */
+}
+
+.skill-inline h3,
+.skill-inline span {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #eeeeee;
+  display: inline; /* makes them flow together */
 }
 
 .skill-inline h3 {
-  margin: 0;
-  font-size: 1.1rem;
+  /* margin: 0;
+  font-size: 1.1rem; */
   font-weight: bold;
   display: flex;
   align-items: center;
+  white-space: nowrap; /* keeps "icon + header" glued together */
 }
 
 .skill-inline h3 i {
@@ -130,7 +140,7 @@ input, select, textarea {
 
 .skill-inline p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #eeeeee;
 }
 
