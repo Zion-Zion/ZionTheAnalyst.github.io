@@ -85,7 +85,7 @@ input, select, textarea {
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: #222;
+  color: #eeeeee;
 }
 
 .skill-item {
@@ -164,6 +164,87 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ─── Skills grid ─── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.skill-card {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.1);
+}
+
+/* ─── Project article hover lift ─── */
+#main .posts article {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#main .posts article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* ─── Name typing cursor ─── */
+.name-title {
+  border-right: 3px solid transparent;
+  padding-right: 4px;
+  display: inline-block;
+}
+
+.name-title.typing {
+  border-right-color: #ffd700;
+  animation: name-caret 0.7s step-end infinite;
+}
+
+@keyframes name-caret {
+  from, to { border-right-color: transparent; }
+  50%       { border-right-color: #ffd700; }
+}
+
+/* ─── Testimonials placeholder ─── */
+.testimonials-placeholder {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #aaa;
+}
+
+.testimonials-placeholder i {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1.2rem;
+  opacity: 0.35;
+}
+
+.testimonials-placeholder h3 {
+  color: #bbb;
+  margin-bottom: 0.5rem;
+}
+
+.testimonials-placeholder p {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+/* ─── Tab section fade ─── */
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tab-section.tab-visible {
+  animation: fadeInTab 0.3s ease forwards;
 }
 
 
@@ -4802,3 +4883,39 @@ html {
 		display: block; /* Ensure image behaves as a block element */
 		margin: 0 auto 20px; /* Center the image horizontally with some bottom margin */
 	}
+
+/* ─── Desktop viewport fit ─── */
+/* Reduces the generous default padding so intro + skills sit fully visible
+   on a typical desktop/laptop screen without the bottom cards cutting off. */
+@media screen and (min-width: 981px) {
+
+	#intro {
+		padding-top: 4.5rem;
+		padding-bottom: 2rem;
+	}
+
+	#intro h1 {
+		font-size: 4rem;
+		margin-bottom: 1rem;
+	}
+
+	#intro p {
+		margin-bottom: 1rem;
+	}
+
+	.skills-section {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+		padding: 1rem 1.5rem;
+	}
+
+	.skills-section h2 {
+		margin-bottom: 0.8rem;
+		font-size: 1.4rem;
+	}
+
+	.skill-card {
+		padding: 0.5rem 0.8rem;
+	}
+
+}
