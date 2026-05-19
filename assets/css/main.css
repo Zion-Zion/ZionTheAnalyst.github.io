@@ -196,6 +196,28 @@ html {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
+/* ─── Intro avatar ─── */
+.intro-avatar {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid rgba(255, 215, 0, 0.55);
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
+  margin-bottom: 1.2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-avatar:hover {
+  filter: grayscale(0%);
+  border-color: rgba(255, 215, 0, 0.9);
+  transform: scale(1.04);
+}
+
 /* ─── Name typing cursor ─── */
 .name-title {
   border-right: 3px solid transparent;
@@ -3498,13 +3520,14 @@ html {
 		}
 
 		#intro a {
-			color: #ffffff;
-			border-bottom-color: rgba(255, 255, 255, 0.5);
+			color: #ffd700;
+			border-bottom-color: rgba(255, 215, 0, 0.4);
 		}
 
 			#intro a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: #ffd700 !important;
+				font-weight: bold;
 			}
 
 		#intro strong, #intro b {
