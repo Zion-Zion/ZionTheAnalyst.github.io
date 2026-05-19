@@ -166,6 +166,31 @@ html {
   justify-content: center;
 }
 
+/* ─── Scroll arrow button ─── */
+#intro .actions {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.arrow-down-btn {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  box-shadow: none !important;
+  animation: arrow-bob 2s ease-in-out infinite;
+}
+
+.arrow-down-btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+@keyframes arrow-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(7px); }
+}
+
 /* ─── Skills grid ─── */
 .skills-grid {
   display: grid;
@@ -197,25 +222,37 @@ html {
 }
 
 /* ─── Intro avatar ─── */
+.avatar-ring {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 215, 0, 0.55);
+  margin-bottom: 1.2rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition: border-color 0.4s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.avatar-ring:hover {
+  border-color: rgba(255, 215, 0, 0.9);
+  transform: scale(1.04);
+}
+
 .intro-avatar {
   width: 155px;
   height: 155px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  border: 3px solid rgba(255, 215, 0, 0.55);
   filter: grayscale(100%);
-  transition: filter 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
-  margin-bottom: 1.2rem;
+  transition: filter 0.4s ease;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 5px auto;
 }
 
-.intro-avatar:hover {
+.avatar-ring:hover .intro-avatar {
   filter: grayscale(0%);
-  border-color: rgba(255, 215, 0, 0.9);
-  transform: scale(1.04);
 }
 
 /* ─── Name typing cursor ─── */

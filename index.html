@@ -35,7 +35,9 @@
 				<!-- Intro -->
 					<!-- <div id="intro">-->
 					<div id="intro">
-						<img src="images/Zion.jpg" alt="Zion" class="intro-avatar" />
+						<div class="avatar-ring">
+							<img src="images/Zion.jpg" alt="Zion" class="intro-avatar" />
+						</div>
 						<h1 class="name-title">Zion Oluwasegun</h1>
 						<p>
 						I am a curious, creative problem-solver who helps people and businesses make sense of their data. 
@@ -55,7 +57,7 @@
 								<div class="skill-card">
 								<div class="skill-inline">
 									<h3><i class="fas fa-database"></i> Data Analysis:</h3>
-									<span>Statistics, Excel, Pandas, Numpy, Webscraping, MSSQL Server, SPSS</span>
+									<span>Statistics, Excel, Pandas, Numpy, Webscraping, MSSQL Server, MongoDB, SPSS</span>
 								</div>
 								</div>
 								<div class="skill-card">
@@ -66,8 +68,8 @@
 								</div>
 								<div class="skill-card">
 								<div class="skill-inline">
-									<h3><i class="fas fa-robot"></i> Machine Learning:</h3>
-									<span>Regression, Classification, NLP, Decision Trees, Random Forest, XGBoost, Ensemble Learning</span>
+									<h3><i class="fas fa-robot"></i> Machine Learning & AI:</h3>
+									<span>Regression, Classification, NLP, FastAPI, Streamlit</span>
 								</div>
 								</div>
 								<div class="skill-card">
@@ -77,9 +79,9 @@
 								</div>
 								</div>
 								<div class="skill-card">
-								<div class="skill-inline">
+								<div class="skill-inline"> 
 									<h3><i class="fas fa-laptop-code"></i> Tools:</h3>
-									<span>Jupyter, Colab, VS Code, Slack, GitHub, Microsoft 365</span>
+									<span>VS Code, Jupyter, Google Colab, GitHub, Notion, Slack</span>
 								</div>
 								</div>
 								<div class="skill-card">
@@ -90,10 +92,8 @@
 								</div>
 							</div>
 						</section>
-					</div>
-					<div class="fade-in">
 						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly"></a></li>
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly arrow-down-btn"></a></li>
 						</ul>
 					</div>
 
@@ -337,6 +337,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
+			// Arrow button — fade out intro immediately on click
+			document.querySelector('.arrow-down-btn')?.addEventListener('click', function() {
+				document.getElementById('intro').classList.add('hidden');
+			});
+
 			// Typing animation for name
 			document.addEventListener('DOMContentLoaded', () => {
 				const nameEl = document.querySelector('.name-title');
